@@ -569,9 +569,20 @@ function embeddedKey(d) {
 }
 
 // ─── Merged data for rendering ───
+function normalizeRecord(d) {
+  if (d.data) {
+    const p = String(d.data).match(/(\d{2})\/(\d{2})\/(\d{4})/);
+    if (p) d.data = p[3] + '-' + p[2] + '-' + p[1];
+  }
+  if (!d.mes || !/^\d{4}-\d{2}$/.test(d.mes)) {
+    if (d.data && /^\d{4}-\d{2}/.test(d.data)) d.mes = d.data.substring(0, 7);
+  }
+  return d;
+}
+
 function getAllData() {
   const embedded = EMBEDDED_DATA.filter(d => !DELETED_KEYS.has(embeddedKey(d)));
-  return embedded.concat(DB_OCORRENCIAS);
+  return embedded.concat(DB_OCORRENCIAS).map(normalizeRecord);
 }
 function getAllPesquisadores() {
   return Object.assign({}, EMBEDDED_PESQUISADORES, DB_PESQUISADORES);
