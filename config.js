@@ -6,7 +6,7 @@
 var CONFIG = {
   // URL do Google Apps Script Web App (após deploy)
   // Exemplo: 'https://script.google.com/macros/s/AKfycbx.../exec'
-  APPS_SCRIPT_URL: 'https://script.google.com/macros/s/AKfycbxkfKqCFOCrHtqIVU23802aaAs5Q1SLXoJuJRNe1ex_WqFKwpfGzadhJPmPRJtTHrxk/exec',
+  APPS_SCRIPT_URL: 'https://script.google.com/macros/s/AKfycbyWk9jJiMwxlL0gH1y1URSZOGHA8TvejmrJykcJ1rRh5vO_dw-AsuC79_-a6MrAcLt2/exec',
 
   // ID da planilha original
   SPREADSHEET_ID: '1-BY4dLkuBpP909kA2BeIWpDi25DTgprbEDx7Wz8QI-Q',
